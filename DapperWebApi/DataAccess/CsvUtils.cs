@@ -10,7 +10,7 @@ namespace DapperWebApi.DataAccess
         public static string ReviewFileName { get; } = "Reviews.csv";
         public static string FullFilePath(this string fileName)
         {
-            return "C:/code/web/visprojekt/backend/DapperWebApi/DataAccess/CsvDatabase/"+fileName;
+            return "C:/code/web/visprojekt/backend/DapperWebApi/DataAccess/CsvDatabase/" + fileName;
         }
         public static char MainSeparator { get; } = ';';
 
@@ -56,7 +56,7 @@ namespace DapperWebApi.DataAccess
                 movie.Country = cols[5];
                 movie.Image_url = cols[6];
 
-                movie.Average_rating = cols[2];
+                movie.Average_rating =
                 movie.Reviews_count = cols[2];
                 movie.Actors = cols[2];]
                 movie.Directors = null;
