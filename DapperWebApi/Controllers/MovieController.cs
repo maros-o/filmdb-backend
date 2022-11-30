@@ -1,5 +1,6 @@
 ﻿using DapperWebApi.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
 
 namespace DapperWebApi.Controllers
 {
@@ -8,7 +9,6 @@ namespace DapperWebApi.Controllers
     public class MovieController : Controller
     {
         private readonly IConfiguration _config;
-
         public MovieController(IConfiguration config)
         {
             _config = config;
@@ -23,7 +23,14 @@ namespace DapperWebApi.Controllers
         [HttpGet("all/{slug}")]
         public async Task<ActionResult<Movie>> GetMovie(string slug)
         {
-            return Ok(GlobalConfig.Connection.MovieDao.GetMovie(slug));
+            try
+            {
+                return Ok(GlobalConfig.Connection.MovieDao.GetMovie(slug));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(JsonSerializer.Serialize(ex.Message));
+            }
         }
 
         /*

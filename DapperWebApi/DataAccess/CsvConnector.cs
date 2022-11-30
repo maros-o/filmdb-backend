@@ -3,11 +3,11 @@ using DapperWebApi.DataAccess.DataAccessObjects.Csv;
 
 namespace DapperWebApi.DataAccess
 {
-    public class CsvConnector
+    public class CsvConnector : IDataConnection
     {
-        public IMovieDao MovieDao = new MovieCsvDao();
-        public IPersonDao PersonDao = new PersonCsvDao();
-        public IReviewDao ReviewDao = new ReviewCsvDao();
-        public IUserDao UserDao = new UserCsvDao();
+        public IMovieDao MovieDao { get; } = new MovieCsvDao();
+        public IPersonDao PersonDao { get; } = new PersonCsvDao();
+        public IReviewDao ReviewDao { get; } = new ReviewCsvDao();
+        public IUserDao UserDao { get; } = new UserCsvDao();
     }
 }

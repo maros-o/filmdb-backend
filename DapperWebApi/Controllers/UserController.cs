@@ -26,7 +26,7 @@ namespace DapperWebApi.Controllers
             }
             catch
             {
-                return BadRequest(JsonSerializer.Serialize("User credentials are not valid"));
+                return BadRequest(JsonSerializer.Serialize("Internal Error"));
             }
         }
     }
