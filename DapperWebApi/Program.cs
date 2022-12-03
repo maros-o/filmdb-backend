@@ -1,3 +1,5 @@
+using DapperWebApi.DataAccess;
+
 namespace DapperWebApi
 {
     public class Program

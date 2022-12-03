@@ -188,7 +188,7 @@ CREATE TABLE users
 )
 GO
 INSERT INTO users (username, email, password)
-VALUES ('tester', 'test@seznam.cz', 'test')
+VALUES ('tester', 'test@seznam.cz', 'password')
 GO
 
 CREATE TABLE movie_review
@@ -202,10 +202,19 @@ CREATE TABLE movie_review
 )
 GO
 INSERT INTO movie_review (users_id, movie_id, comment, rating)
-VALUES (1,3, 'nic moc film', 5)
+VALUES (1,1, 'Nic moc film', 5)
 GO
 INSERT INTO movie_review (users_id, movie_id, comment, rating)
-VALUES (2,3, 'luxusni film', 9)
+VALUES (1,2, 'Luxusní film', 9)
 GO
 INSERT INTO movie_review (users_id, movie_id, comment, rating)
-VALUES (3,3, 'da se', 8)
+VALUES (1,3, 'Supr film', 8)
+GO
+INSERT INTO movie_review (users_id, movie_id, comment, rating)
+VALUES (1,4, 'Slabý film', 2)
+GO
+INSERT INTO movie_review (users_id, movie_id, comment, rating)
+VALUES (1,5, 'Odpad!!', 0)
+
+select * from movies
+select * from person

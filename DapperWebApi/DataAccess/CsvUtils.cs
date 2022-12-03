@@ -10,11 +10,12 @@ namespace DapperWebApi.DataAccess
         public static string PeopleFileName { get; } = "People.csv";
         public static string UsersFileName { get; } = "Users.csv";
         public static string ReviewsFileName { get; } = "Reviews.csv";
+        public static char MainSeparator { get; } = ';';
+
         public static string FullFilePath(this string fileName)
         {
-            return "C:/code/web/visprojekt/backend/DapperWebApi/DataAccess/CsvDatabase/" + fileName;
+            return AppContext.BaseDirectory + "/CsvDatabase/" + fileName;
         }
-        public static char MainSeparator { get; } = ';';
 
         public static IEnumerable<string> LoadFile(this string filePath)
         {
